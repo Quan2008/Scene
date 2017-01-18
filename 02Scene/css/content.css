@@ -1,0 +1,297 @@
+/*data:2017/1/5*/
+/*author:LYQ*/
+body,div,p,pre,i,b,ul,ol,dl,dt,dd,li,h1,h2,h3,h4,h5,h6,img,input,button,table,form{
+	padding:0;
+	margin:0;
+	list-style:none;
+	border:none;
+}
+body{
+	font-family:"宋体","微软雅黑",Arial,Helvetica,sans-serif;
+	font-size:16px;
+	color:#848484;
+	background:#121212;
+}
+a{
+	color:#B2BCC2;
+	text-decoration:none;
+}
+a:hover{
+	color:#fff;
+	text-decoration:none;
+}
+.lf{
+	float:left;
+}
+.rt{
+	float:right;
+}
+.clear:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.table:before{
+	content:"";
+	display:table;
+}
+header,nav,section,footer{
+	width:100%;
+	height:auto;
+}
+/*1.头部*/
+header{
+	position:relative;
+}
+#bg_img{
+	height:800px;
+	background:url(../images/cover_bg_1.jpg) no-repeat left center;
+	background-size: cover;
+}
+/*阴影*/
+header div.shadow{
+	width:100%;
+	height:800px;
+	background:#000;
+	opacity:0.4;
+	position:absolute;
+	left:0;
+	top:0;
+}
+ /*2.导航*/
+ #nav{
+	width:1210px;
+	height:100px;
+	line-height:100px;
+	position: absolute;
+	left: 0; 
+	top: 0; 
+	right: 0; 
+    margin: auto;
+	/*实现绝对定位元素的居中，上右下左 位置为0，最后加上margin:auto*/
+ }
+ /*2.1上部的导航条*/
+ #nav>p{
+	float:left;
+	width:800px;
+	font-size:26px;
+	font-weight:bold;
+	color:#fff;
+ }
+ #nav>p a{
+	color:#fff;
+ }
+ #nav>ul>li{
+	height:30px;
+	line-height:100px;
+	float:left;
+	margin-right:40px;
+	font-weight:bold;
+ }
+ #nav>ul>li.current{
+	color:#fff;
+ }
+ #nav>ul>li>i{
+	display:inline-block;
+	width:0;
+	height:0;
+	border:5px solid;
+	border-color:#B2BCC2 transparent transparent transparent;
+ }
+ #nav>ul>li:hover i{
+	border-color:transparent transparent #fff transparent;
+	position:relative;
+	top:-5px;
+ }
+ #nav li.list{
+	position:relative;
+ }
+ #nav li.list div.list_content{
+	position:absolute;
+	top:75px;
+	left:-10px;
+	width:100px;
+	height:150px;
+	border:1px solid #fff;
+	background:#fff;
+	border-radius:5px;
+	display:none;
+ }
+ #nav div.list_content b{
+	width:0;
+	height:0;
+	border:5px solid;
+	border-color:transparent transparent #fff transparent;
+	position:absolute;
+	left:20px;
+	top:-10px;
+ }
+ #nav div.list_content ul li{
+	height:20px;
+	line-height:20px;
+	margin-top:10px;
+	text-align:center;
+ }
+ #nav li.list:hover div.list_content{
+	display:block;
+ }
+ /*2.2中部的主题*/
+ #topic{
+	width:900px;
+	height:180px;
+	position:absolute;
+	left:0;
+	top:240px;
+	right:0;
+	margin:auto;
+	animation:change 0.6s linear;
+ }
+ @keyframes change{
+	0%{
+		opacity:0;
+		margin-top:100px;
+	}
+	100%{
+		opacity:1;
+		margin-top:0;
+	}
+ }
+ #topic P{
+	font-size:60px;
+	font-weight:bold;
+	color:#fff;
+	text-align:center;
+	margin-bottom:30px;
+ }
+ #topic a{
+	display:block;
+	width:180px;
+	height:45px;
+	line-height:45px;
+	background:#83C565;
+	color:#fff;
+	font-size:20px;
+	text-align:center;
+	margin:0 auto;
+	border-radius:5px;
+	border:2px solid transparent;
+ }
+ #topic a:hover{
+	background:transparent;
+	border-color:#fff;
+ }
+ /*3.页面主体*/
+ section{
+	background:#000;
+	height:auto;
+ }
+ #content{
+	width:1210px;
+	height:1050px;
+	margin:0 auto;
+	background:#121212;
+ }
+  #content ul{
+	margin-top:-60px;
+	position:relative;
+	z-index:200;
+  }
+  /*3.1下面的6幅图*/
+ #content ul.img_list6 li{
+	float:left;
+	box-sizing:border-box;
+	width:370px;
+	height:325px;
+	margin:0 16px 30px;
+	overflow:hidden;
+	position:relative;
+ }
+ #content ul.img_list6 li img{
+	width:370px;
+	height:325px;
+ }
+ /*城市名*/
+ #content ul.img_list6 div.shadow{
+	width:370px;
+	height:70px;
+	opacity:0;
+	background:#000;
+	position:absolute;
+	left:0;
+	bottom:0;
+ }
+ #content ul.img_list6 div.city_name{
+	box-sizing:border-box;
+	width:370px;
+	height:70px;
+	line-height:70px;
+	padding:0 20px;
+	position:absolute;
+	left:0;
+	bottom:0;
+ }
+ #content ul.img_list6 div.city_name span{
+	font-size:20px;
+	font-weight:bold;
+	color:#fff;
+ }
+#content ul.img_list6 div.city_name i{
+	float:right;
+	display:inline-block;
+	width:14px;
+	height:23px;
+	background:url(../images/iconlist_3.png) no-repeat -60px -50px;
+	margin-top:20px;
+}
+/*鼠标移上去，图片变大*/
+#content ul.img_list6 li:hover img{
+	transition:transform 0.4s linear;
+}
+#content ul.img_list6 li:hover div.shadow{
+	transition:opacity 0.4s linear;
+}
+#content ul.img_list6 li:hover img{
+	transform:scale(1.1);
+}
+#content ul.img_list6 li:hover div.shadow{
+	opacity:0.5;
+}
+/*4.底部信息*/
+footer{
+	height:250px;
+	background:#000;
+}
+#contact{
+	box-sizing:border-box;
+	width:1210px;
+	height:150px;
+	margin:0 auto;
+	padding:20px 0;
+	border:1px solid #fff;
+	margin-top:50px;
+}
+#contact div.contact_list{
+	width:232px;
+	margin:0 auto;
+}
+#contact div.contact_list i{
+	display:inline-block;
+	width:20px;
+	height:18px;
+	margin:0 10px;
+}
+#contact div.contact_list i:nth-child(1){
+	background:url(../images/social.png) no-repeat -48px -9px;
+}
+#contact div.contact_list i:nth-child(2){
+	background:url(../images/social.png) no-repeat -86px -9px;
+}
+#contact div.contact_list i:nth-child(3){
+	background:url(../images/social.png) no-repeat -128px -9px;
+}
+#contact div.contact_list i:nth-child(4){
+	background:url(../images/social.png) no-repeat -169px -9px;
+}
+#contact div.contact_list i:nth-child(5){
+	background:url(../images/social.png) no-repeat -16px -9px;
+}
